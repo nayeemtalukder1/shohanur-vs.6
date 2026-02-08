@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --animation-gradient: gradient-move 4s ease-in-out infinite;
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+/* Glowing Button - CLEAN (NO SHADOW) */
+.glow-btn {
+  --angle: 0deg;
+  padding: 14px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  position: relative;
+  /* background: #9333EA; */
+  transition: transform 0.3s ease;
+}
+
+/* Border Glow */
+.glow-btn::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--angle),
+      transparent,
+      #d11149,
+      #e68aff,
+      #ff4800,
+      #11ebff,
+      #cdff58,
+      #d11149);
+  z-index: -1;
+}
+
+/* Removed shadow blur */
+.glow-btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--angle),
+      #d11149,
+      #e68aff,
+      #ff4800,
+      #11ebff,
+      #cdff58);
+  /* opacity: 0.5; */
+  z-index: -2;
+}
+
+.glow-btn::before,
+.glow-btn::after {
+  animation: glowing-border 4s linear infinite;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes glowing-border {
+  to {
+    --angle: 360deg;
+  }
+}
