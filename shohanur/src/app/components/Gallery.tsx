@@ -26,7 +26,7 @@ export default function Portfolio() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:8000/gallery/");
+        const res = await fetch("https://backend-shohanur-1.onrender.com/gallery/");
 
         if (!res.ok) throw new Error(`HTTP ${res.status} – Failed to fetch projects`);
 
@@ -39,8 +39,8 @@ export default function Portfolio() {
             title: p.title,
             type: p.type,
             description: p.description || "",
-            heroImage: `http://127.0.0.1:8000${p.hero_image || p.heroImage || ""}`,
-            images: (p.images || []).map((img: any) => `http://127.0.0.1:8000${img.image}`),
+            heroImage: `https://backend-shohanur-1.onrender.com${p.hero_image || p.heroImage || ""}`,
+            images: (p.images || []).map((img: any) => `https://backend-shohanur-1.onrender.com${img.image}`),
             bg: p.bg || "from-blue-500 to-indigo-600", // 🔵 updated gradient
             details: p.details || "",
           }));

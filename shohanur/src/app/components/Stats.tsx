@@ -16,7 +16,7 @@ export default function Stats() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:8000/stats/");
+        const res = await fetch("https://backend-shohanur-1.onrender.com/stats/");
         if (!res.ok) throw new Error("Failed to fetch stats");
         const data = await res.json();
         setStats(data);

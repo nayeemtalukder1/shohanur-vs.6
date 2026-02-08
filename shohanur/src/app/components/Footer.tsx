@@ -30,7 +30,7 @@ export default function Footer() {
   const [services, setServices] = useState<Service[]>([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/services/")
+    fetch("https://backend-shohanur-1.onrender.com/services/")
       .then(res => res.json())
       .then(data => setServices(data))
       .catch(err => console.error("Failed to load services", err));
