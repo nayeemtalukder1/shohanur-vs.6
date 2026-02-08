@@ -36,7 +36,7 @@ export default function Services() {
   const [services, setServices] = useState<Service[]>([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/services/")
+    fetch("https://backend-shohanur-1.onrender.com/services/")
       .then((res) => res.json())
       .then((data) => setServices(data))
       .catch((err) => console.error("Service fetch error:", err));
