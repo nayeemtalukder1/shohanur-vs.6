@@ -40,8 +40,8 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
       slug: found.slug,
       title: found.title,
       description: found.description,
-      heroImage: `https://backend-shohanur-1.onrender.com${found.hero_image || found.heroImage}`,
-      images: (found.images || []).map((img: any) => `https://backend-shohanur-1.onrender.com${img.image}`),
+      heroImage: `http://127.0.0.1:8000${found.hero_image || found.heroImage}`,
+      images: (found.images || []).map((img: any) => `http://127.0.0.1:8000${img.image}`),
       bg: found.bg || "from-purple-500 to-indigo-600",
       details: found.details || "",
     };
